@@ -1,19 +1,18 @@
-package com.example.musicplayer
+package com.example.musicplayer.ui.songslist
 
 import android.annotation.SuppressLint
-import android.provider.MediaStore.Audio
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.musicplayer.data.model.SongModel
+import com.example.musicplayer.R
 
-class AudioAdapter(private val audios: ArrayList<AudioModel>) :
-    RecyclerView.Adapter<AudioAdapter.AudioViewHolder>() {
+class SongAdapter(private val audios: ArrayList<SongModel>) :
+    RecyclerView.Adapter<SongAdapter.AudioViewHolder>() {
 
-    var audio: ArrayList<AudioModel> = ArrayList<AudioModel>()
+    var audio: ArrayList<SongModel> = ArrayList<SongModel>()
 
     init {
         audio = audios
@@ -21,12 +20,12 @@ class AudioAdapter(private val audios: ArrayList<AudioModel>) :
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
-    ): AudioAdapter.AudioViewHolder {
+    ): AudioViewHolder {
         val item = LayoutInflater.from(parent.context).inflate(R.layout.items, parent, false)
         return AudioViewHolder(item)
     }
 
-    override fun onBindViewHolder(holder: AudioAdapter.AudioViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AudioViewHolder, position: Int) {
         val currentItem = audio[position]
         holder.rvTitle.text = currentItem.title
         holder.rvArtist.text = currentItem.artist
