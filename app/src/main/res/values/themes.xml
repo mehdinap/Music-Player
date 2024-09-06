@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MusicPlayer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorPrimaryDark">@color/grey</item>
+    </style>
+
+    <style name="song_cover_shape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25%</item>
+    </style>
+
+    <style name="song_view_song_cover_shape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25%</item>
+    </style>
+
+    <drawable name="exo_styled_controls_previous" tools:override="true">@drawable/skip_previous_white_24dp</drawable>
+    <drawable name="exo_styled_controls_next" tools:override="true">@drawable/skip_next_white_24dp</drawable>
+    <drawable name="exo_styled_controls_play" tools:override="true">@drawable/play_arrow_white_24dp</drawable>
+    <drawable name="exo_styled_controls_pause" tools:override="true">@drawable/pause_white_24dp</drawable>
+
+    <style name="Theme.MusicPlayer" parent="Base.Theme.MusicPlayer" />
+</resources>
