@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.SongViewFragment">
+
+    <ImageView
+        android:id="@+id/background_blurred"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="#6F000000"
+        android:foregroundTintMode="src_atop"
+        android:outlineSpotShadowColor="@color/cardview_shadow_end_color"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/hide_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_m"
+        android:background="@color/transparent"
+        android:src="@drawable/expand_more_white_48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabView"
+        android:layout_width="409dp"
+        android:layout_height="600dp"
+        android:background="#70B6B0"
+        app:layout_constraintBottom_toTopOf="@+id/playback_controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_pager"
+        app:tabIndicatorGravity="stretch"
+        app:tabTextColor="@color/black" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="399dp"
+        android:layout_height="556dp"
+        app:layout_constraintBottom_toTopOf="@+id/playback_controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/song_cover"
+        android:layout_width="@dimen/song_view_song_cover_width"
+        android:layout_height="@dimen/song_view_song_cover_height"
+        app:layout_constraintBottom_toTopOf="@id/playback_controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:shapeAppearanceOverlay="@style/song_view_song_cover_shape"
+        tools:src="@drawable/music_cover_placeholder" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_m"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/song_view_song_title_size"
+        app:layout_constraintBottom_toTopOf="@id/song_artist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_cover"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Rasputin"
+        tools:textColor="@color/white" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/song_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/song_view_artist_size"
+        app:layout_constraintBottom_toTopOf="@id/playback_controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_title"
+        app:layout_constraintVertical_bias="1"
+        tools:text="Boney M"
+        tools:textColor="@color/white" />
+
+
+    <androidx.media3.ui.PlayerControlView
+        android:id="@+id/playback_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:controller_layout_id="@layout/player_control_song_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:repeat_toggle_modes="one"
+        app:show_shuffle_button="true"
+        app:show_timeout="0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
